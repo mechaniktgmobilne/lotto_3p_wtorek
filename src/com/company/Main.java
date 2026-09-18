@@ -11,5 +11,7 @@ public class Main {
         gra.wypisz(Gra.getWylosowane());
         gra.wczytajLiczbyZKlawiatury();
         gra.wypisz(gra.getWpisane());
+        gra.sprawdzTrafione();
+        gra.wypisz(gra.getTrafione());
     }
 }

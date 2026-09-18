@@ -63,7 +63,13 @@ public class Gra {
      * sprawdza które liczby są wpisane i wylosowane
      */
     public void sprawdzTrafione(){
-
+        trafione = new ArrayList<>();
+        for (Integer liczba: wylosowane) {
+            if(wpisane.contains(liczba))
+            {
+                trafione.add(liczba);
+            }
+        }
     }
     //przeciążanie metod -> polimorfizm
     //metody mają taką samą nazwę ale różna liczba argumentów lub ich typ
@@ -72,12 +78,14 @@ public class Gra {
         for (int i = 0; i < listaDoWypisania.size(); i++) {
             System.out.print(listaDoWypisania.get(i)+", ");
         }
+        System.out.println();
     }
     public void wypisz(HashSet<Integer> zbiorDoWypisania){
         System.out.println(zbiorDoWypisania);
         for (Integer element :zbiorDoWypisania ) {
             System.out.print(element+", ");
         }
+        System.out.println();
     }
 
 }
