@@ -3,6 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Gra {
     private static HashSet<Integer> wylosowane;
@@ -11,6 +12,7 @@ public class Gra {
 
     public Gra() {
         wylosujLiczby();
+        wpisane = new ArrayList<>();
     }
 
     public static HashSet<Integer> getWylosowane() {
@@ -43,7 +45,18 @@ public class Gra {
      * liczby nie mogą się powtarzać
      */
     public void wczytajLiczbyZKlawiatury(){
-
+        Scanner scanner = new Scanner(System.in);
+        wpisane.clear();
+        int liczba;
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Podaj liczbę nr "+(i+1));
+            liczba = scanner.nextInt();
+            while (wpisane.contains(liczba)){
+                System.out.println("podaj inną liczbę");
+                liczba = scanner.nextInt();
+            }
+            wpisane.add(liczba);
+        }
     }
 
     /**
